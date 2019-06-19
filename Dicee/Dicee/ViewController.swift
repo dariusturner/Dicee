@@ -33,6 +33,12 @@ class ViewController: UIViewController {
         //This will get executed when the roll button gets pressed.
     }
     
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        
+        updateDiceImages()
+        
+    }
+    
     func updateDiceImages() {
         
         randomDiceIndex1 = Int.random(in: 0 ... 5)
@@ -40,6 +46,7 @@ class ViewController: UIViewController {
         
         diceImageView1.image = UIImage(named: randomImage[randomDiceIndex1])
         diceImageView2.image = UIImage(named: randomImage[randomDiceIndex2])
+        
     }
     
 }
